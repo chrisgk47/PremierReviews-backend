@@ -1,6 +1,6 @@
 require 'faker'
 
-
+API_URL = 'https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=4328&s=2020-2021'
 
 teams = Team.create([
     {
@@ -60,10 +60,6 @@ teams = Team.create([
         image: 'https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Crystal-Palace-icon.png'
     },
     {
-        name: 'Fulham FC',
-        image: 'https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Fulham-FC-icon.png'
-    },
-    {
         name: 'Southhampton FC',
         image: 'https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Southampton-FC-icon.png'
     },
@@ -80,21 +76,9 @@ teams = Team.create([
         image: 'https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Norwich-City-icon.png'
     },
     {
-        name: 'Sheffield United FC',
-        image: 'https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Sheffield-United-icon.png'
-    },
-    {
         name: 'Watford FC',
         image: 'https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Watford-FC-icon.png'
-    },
-    {
-        name: 'Swansea City AFC',
-        image: 'https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Swansea-City-icon.png'
-    },
-    {
-        name: 'Huddersfield Town AFC.',
-        image: 'https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Huddersfield-Town-icon.png'
-    },
+    }
 ])
 
 User.create([
@@ -104,177 +88,205 @@ User.create([
         password_digest: "#{User.digest('kimfam')}"
     }
 ])
-reviews = Review.create([
+User.create([
     {
-        title: 'Solid',
-        description: "Solid Defense",
-        likes: 10,
-        team_id: 2,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 1,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 5,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 6,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 4,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 6,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 7,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 8,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 9,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 10,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 11,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 12,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 13,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 14,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 15,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 16,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 17,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 18,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 19,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 20,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 21,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 22,
-        user_id: 1
-    },
-    {
-        title: 'Solid Team',
-        description: Faker::Quote.yoda,
-        likes: 10,
-        team_id: 23,
-        user_id: 1
-    },
-    {
-        title: 'Great Athletes',
-        description: "Manchester United FC is a pretty well-rounded solid team",
-        likes: 10,
-        team_id: 1,
-        user_id: 1
-    },
-
+        username: "JamesB",
+        email: "JB007@chickmagnet.com",
+        password_digest: "#{User.digest('jb007')}"
+    }
 ])
+10.times do
+    Review.create({
+        title: Faker::Music::RockBand.song,
+        description: Faker::Quote.yoda,
+        likes: rand(5..20),
+        author: User.first.email,
+        team_id: 1,
+        user_id: 1
+    })
+end
+
+10.times do
+    Review.create({
+        title: Faker::Music::RockBand.song,
+        description: Faker::Quote.yoda,
+        likes: rand(5..20),
+        author: User.all[1].email,
+        team_id: rand(1..23),
+        user_id: 2
+    })
+end
+# reviews = Review.create([
+#     {
+#         title: 'Solid',
+#         description: "Solid Defense",
+#         likes: 10,
+#         team_id: 2,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 1,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 5,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 6,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 4,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 6,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 7,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 8,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 9,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 10,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 11,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 12,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 13,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 14,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 15,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 16,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 17,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 18,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 19,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 20,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 21,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 22,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Solid Team',
+#         description: Faker::Quote.yoda,
+#         likes: 10,
+#         team_id: 23,
+#         user_id: 1
+#     },
+#     {
+#         title: 'Great Athletes',
+#         description: "Manchester United FC is a pretty well-rounded solid team",
+#         likes: 10,
+#         team_id: 1,
+#         user_id: 1
+#     },
+
+# ])
 
 puts "seeded"
 

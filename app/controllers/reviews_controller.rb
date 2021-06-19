@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-    # protect_from_forgery with: :null_session
     helper_method :current_user
 
     def index
@@ -48,7 +47,7 @@ class ReviewsController < ApplicationController
     end
 
     def review_params
-        params.require(:review).permit(:title, :description, :score, :likes, :team_id, :user_id) 
+        params.require(:review).permit(:title, :description, :score, :likes, :author, :team_id, :user_id) 
         
     end
     

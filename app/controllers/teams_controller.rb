@@ -1,5 +1,4 @@
 class TeamsController < ApplicationController
-    # protect_from_forgery with: :null_session
     before_action :set_team, only: [:show, :update, :destroy]
 
 
