@@ -11,22 +11,29 @@ class UsersController < ApplicationController
     end
 
     def login
-        user = User.find_by(email:user_prams[:email])
+        @user = User.find_by(email: user_params[:email])
 
-        if user && user.authenticate(user_params[:password])
-            render json: user
+        if @user && @user.authenticate(user_params[:password])
+            render json: @user
         else
             render json: { errors: ["Incorrect username or password"] }, status: :unauthorized
         end
     end
 
     def create
-        user = User.create(user_params)
+        @user = User.new(user_params)
 
-        if user.valid?
-            render json: user
+        if @user.save
+            login!
+            render json: {
+                status: :created,
+                user: @user
+        }
         else
-            render json: { errors: user.errors.full_messages }
+            render json: { 
+                status: 500,
+                errors: @user.errors.full_messages 
+            }
         end
     end
 
@@ -48,6 +55,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-        params.permit(:email, :password)
+        params.require(:user).permit(:username, :email, :password, :password_confirmation)
     end
 end
