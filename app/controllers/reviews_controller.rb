@@ -27,8 +27,8 @@ class ReviewsController < ApplicationController
 
 
     def update
+        @review = Review.find(params[:id])
         if @review.update(review_params)
-            @review = Review.find(params[:id])
             render json: @review
         else
             render json: @review.errors, status: :unprocessable_entity
@@ -47,7 +47,7 @@ class ReviewsController < ApplicationController
     end
 
     def review_params
-        params.require(:review).permit(:title, :description, :score, :likes, :author, :team_id, :user_id) 
+        params.require(:review).permit(:title, :description, :likes, :author, :team_id, :user_id) 
         
     end
     

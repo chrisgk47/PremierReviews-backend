@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_17_181708) do
+ActiveRecord::Schema.define(version: 2021_06_19_225947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "matches", force: :cascade do |t|
+    t.string "game1"
+    t.string "game2"
+    t.string "season"
+    t.string "home"
+    t.string "away"
+    t.integer "home_score"
+    t.integer "away_score"
+    t.date "date"
+    t.string "image"
+    t.string "video"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "reviews", force: :cascade do |t|
     t.string "title"
@@ -31,6 +46,12 @@ ActiveRecord::Schema.define(version: 2021_06_17_181708) do
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.string "image"
+    t.string "description"
+    t.string "stadium"
+    t.string "website"
+    t.string "banner"
+    t.string "youtube"
+    t.string "jersey"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
