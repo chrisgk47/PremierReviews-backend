@@ -1,6 +1,6 @@
 class Team < ApplicationRecord
     has_many :reviews
-    has_many :users, through: :users #needs fixing
+    has_many :users, through: :reviews #needs fixing
     serialize :reviews
 
     # def slugify

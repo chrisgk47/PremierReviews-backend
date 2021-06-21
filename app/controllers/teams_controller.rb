@@ -23,6 +23,13 @@ class TeamsController < ApplicationController
         end
     end
 
+    def getFromApi
+        teamsResp = RestClient.get('https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=English%20Premier%20League')
+        results = JSON.parse(teamsResp)["teams"]
+
+        @teams = results
+        render json: @teams
+    end
     # def update
     #     if @team.update(team_params)
     #         render json: @team
