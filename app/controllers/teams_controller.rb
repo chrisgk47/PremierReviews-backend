@@ -30,17 +30,6 @@ class TeamsController < ApplicationController
         @teams = results
         render json: @teams
     end
-    # def update
-    #     if @team.update(team_params)
-    #         render json: @team
-    #     else
-    #         render json: @team.errors, status: :unprocessable_entity
-    #     end
-    # end
-
-    # def destroy
-    #     @team.destroy
-    # end
 
     private
 
@@ -49,7 +38,7 @@ class TeamsController < ApplicationController
     end
 
     def team_params
-        params.require(:team).permit(:name, :image, :description, :stadium, :stadium_img, :website, :banner, :youtube, :jersey)
+        params.require(:team).permit(:name, :image, :description, :stadium, :stadium_img, :website, :banner, :youtube, :jersey, :average_score)
     end
     
 end

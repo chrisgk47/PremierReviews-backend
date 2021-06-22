@@ -10,6 +10,7 @@ class CreateTeams < ActiveRecord::Migration[6.1]
       t.string :banner
       t.string :youtube
       t.string :jersey
+      t.integer :average_score, default: 0
       t.timestamps
     end
   end

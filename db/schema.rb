@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2021_06_19_225947) do
     t.string "description"
     t.integer "likes"
     t.string "author"
+    t.integer "score"
     t.bigint "team_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -53,6 +54,7 @@ ActiveRecord::Schema.define(version: 2021_06_19_225947) do
     t.string "banner"
     t.string "youtube"
     t.string "jersey"
+    t.integer "average_score", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
