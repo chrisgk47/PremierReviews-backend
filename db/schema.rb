@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2021_06_19_225947) do
     t.string "image"
     t.string "description"
     t.string "stadium"
+    t.string "stadium_img"
     t.string "website"
     t.string "banner"
     t.string "youtube"

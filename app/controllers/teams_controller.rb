@@ -49,7 +49,7 @@ class TeamsController < ApplicationController
     end
 
     def team_params
-        params.require(:team).permit(:name, :image, :description, :stadium, :website, :banner, :youtube, :jersey)
+        params.require(:team).permit(:name, :image, :description, :stadium, :stadium_img, :website, :banner, :youtube, :jersey)
     end
     
 end

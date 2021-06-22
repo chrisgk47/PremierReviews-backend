@@ -11,6 +11,7 @@ results.each do |result|
         image: result["strTeamBadge"],
         description: result["strDescriptionEN"],
         stadium: result["strStadium"],
+        stadium_img: result["strStadiumThumb"],
         website: result["strWebsite"],
         banner: result["strTeamBanner"],
         youtube: result["strYoutube"],

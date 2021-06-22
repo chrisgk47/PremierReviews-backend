@@ -5,6 +5,7 @@ class CreateTeams < ActiveRecord::Migration[6.1]
       t.string :image
       t.string :description
       t.string :stadium
+      t.string :stadium_img
       t.string :website
       t.string :banner
       t.string :youtube
