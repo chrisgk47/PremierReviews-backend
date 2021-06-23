@@ -4,9 +4,9 @@ class Team < ApplicationRecord
     serialize :reviews
     after_find :calculate_average
 
-    # def slugify
-    #     self.slug = name.parameterize
-    # end
+    before_create -> (team) do
+        team.slug = team.name.parameterize
+    end
 
     def calculate_average
         return 0 unless reviews.size.positive?

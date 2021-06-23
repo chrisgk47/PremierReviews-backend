@@ -34,11 +34,11 @@ class TeamsController < ApplicationController
     private
 
     def set_team
-        @team = Team.find(params[:id])
+        @team = Team.find_by_slug(params[:slug])
     end
 
     def team_params
-        params.require(:team).permit(:name, :image, :description, :stadium, :stadium_img, :website, :banner, :youtube, :jersey, :average_score)
+        params.require(:team).permit(:name, :image, :slug, :description, :stadium, :stadium_img, :website, :banner, :youtube, :jersey, :average_score)
     end
     
 end

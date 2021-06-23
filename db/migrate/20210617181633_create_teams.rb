@@ -3,6 +3,7 @@ class CreateTeams < ActiveRecord::Migration[6.1]
     create_table :teams do |t|
       t.string :name
       t.string :image
+      t.string :slug
       t.string :description
       t.string :stadium
       t.string :stadium_img

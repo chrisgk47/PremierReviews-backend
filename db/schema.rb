@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2021_06_19_225947) do
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.string "image"
+    t.string "slug"
     t.string "description"
     t.string "stadium"
     t.string "stadium_img"
