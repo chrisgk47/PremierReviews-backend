@@ -52,14 +52,16 @@ User.create([
     {
         username: "chrisk",
         email: "chris.kim1990@gmail.com",
-        password_digest: "#{User.digest('kimfam')}"
+        password_digest: "#{User.digest('kimfam')}",
+        profile_img: 'https://ca.slack-edge.com/T02MD9XTF-U01LYNW3TMM-de7dfc536650-512'
     }
 ])
 User.create([
     {
         username: "JamesB",
         email: "JB007@chickmagnet.com",
-        password_digest: "#{User.digest('jb007')}"
+        password_digest: "#{User.digest('jb007')}",
+        profile_img: 'https://pbs.twimg.com/profile_images/2668854518/79fc3605e372a8e1e34693abcf7d7847.jpeg'
     }
 ])
 20.times do

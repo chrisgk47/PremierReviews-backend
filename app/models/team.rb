@@ -2,6 +2,7 @@ class Team < ApplicationRecord
     has_many :reviews
     has_many :users, through: :reviews 
     serialize :reviews
+    after_find :calculate_average
 
     # def slugify
     #     self.slug = name.parameterize
